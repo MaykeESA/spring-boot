@@ -23,6 +23,9 @@ public class Resposta {
 	private Usuario autor;
 	private Boolean solucao = false;
 
+	public Resposta() {
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
