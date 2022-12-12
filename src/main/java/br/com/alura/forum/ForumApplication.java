@@ -1,5 +1,6 @@
- package br.com.alura.forum;
+package br.com.alura.forum;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,19 +15,17 @@ import br.com.alura.forum.repository.UsuarioRepository;
 @SpringBootApplication
 public class ForumApplication implements CommandLineRunner{
 
-	private final TopicosRepository tr;
-	private final CursoRepository cr;
-	private final UsuarioRepository ur;
+	@Autowired
+	private TopicosRepository tr;
+	@Autowired
+	private CursoRepository cr;
+	@Autowired
+	private UsuarioRepository ur;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ForumApplication.class, args);
 	}
 	
-	public ForumApplication(TopicosRepository tr, CursoRepository cr, UsuarioRepository ur) {
-		this.tr = tr;
-		this.cr = cr;
-		this.ur = ur;
-	}
 	@Override
 	public void run(String... args) throws Exception {
 		

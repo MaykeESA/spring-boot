@@ -10,6 +10,6 @@ import br.com.alura.forum.modelo.Topico;
 @Repository
 public interface TopicosRepository extends JpaRepository<Topico, Long>{
 
-	List<Topico> findByCursoNome(String nome);
+	public List<Topico> findByCursoNome(String nome);
 
 }
