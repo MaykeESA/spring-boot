@@ -24,6 +24,7 @@ public class ErroValidacaoHandler {
 	public List<ErroDeFormularioDto> handle(MethodArgumentNotValidException exception) {
 		//Lista que será retornada 
 		List<ErroDeFormularioDto> dto = new ArrayList<>();
+		
 		//Lista dos erros, de acordo com a Exception passada no parâmetro
 		List<FieldError> fieldErrors = exception.getBindingResult().getFieldErrors();
 		
