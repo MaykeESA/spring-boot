@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
 
 import br.com.alura.forum.modelo.Curso;
 import br.com.alura.forum.modelo.Topico;
@@ -13,6 +14,7 @@ import br.com.alura.forum.repository.TopicosRepository;
 import br.com.alura.forum.repository.UsuarioRepository;
 
 @SpringBootApplication
+@EnableSpringDataWebSupport
 public class ForumApplication implements CommandLineRunner{
 
 	@Autowired
