@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 
 import br.com.alura.forum.modelo.Curso;
@@ -14,6 +15,7 @@ import br.com.alura.forum.repository.TopicosRepository;
 import br.com.alura.forum.repository.UsuarioRepository;
 
 @SpringBootApplication
+@EnableCaching
 @EnableSpringDataWebSupport
 public class ForumApplication implements CommandLineRunner{
 
@@ -40,8 +42,10 @@ public class ForumApplication implements CommandLineRunner{
 		this.cr.save(cursoFront);
 		this.cr.save(cursoSeguranca);
 		
+		# Senha: $2a$10$Zlu7OQJW.OVbb4JrUEHawuuG7DdZt09c9AnlUlenSjT3P5dEFiBC2
+		
 		Usuario user1 = new Usuario("Mayke", "mayke@mail.com", "senha123");
-		Usuario user2 = new Usuario("Gustavo", "gustavo@mail.com", "123senha");
+		Usuario user2 = new Usuario("Gustavo", "gustavo@mail.com", "senha123");
 		Usuario user3 = new Usuario("Andre", "andre@mail.com", "senha123");
 		
 		this.ur.save(user1);

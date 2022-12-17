@@ -1,22 +1,17 @@
 package br.com.alura.forum.controller.form;
 
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Length;
+import javax.validation.constraints.Size;
 
 import br.com.alura.forum.modelo.Topico;
 import br.com.alura.forum.repository.TopicosRepository;
 
 public class AtualizacaoTopicoForm {
 
-	@NotNull
-	@NotBlank
-	@Length(min = 5)
+	@NotNull @NotEmpty @Size(min = 5)
 	private String titulo;
-	@NotNull
-	@NotBlank
-	@Length(min = 5)
+	@NotNull @NotEmpty @Size(min = 5)
 	private String mensagem;
 
 	public String getTitulo() {
