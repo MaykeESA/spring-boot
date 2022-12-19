@@ -42,7 +42,8 @@ public class ForumApplication implements CommandLineRunner{
 		this.cr.save(cursoFront);
 		this.cr.save(cursoSeguranca);
 		
-		# Senha: $2a$10$Zlu7OQJW.OVbb4JrUEHawuuG7DdZt09c9AnlUlenSjT3P5dEFiBC2
+		# Senha BCrypt: 
+			$2a$10$Zlu7OQJW.OVbb4JrUEHawuuG7DdZt09c9AnlUlenSjT3P5dEFiBC2
 		
 		Usuario user1 = new Usuario("Mayke", "mayke@mail.com", "senha123");
 		Usuario user2 = new Usuario("Gustavo", "gustavo@mail.com", "senha123");
@@ -51,10 +52,7 @@ public class ForumApplication implements CommandLineRunner{
 		this.ur.save(user1);
 		this.ur.save(user2);
 		this.ur.save(user3);
-		*/
-		
 
-		/*
 		Curso c = this.cr.findById((long) 1).get();
 		Usuario u = this.ur.findById((long) 1).get();
 		Topico top = new Topico("Error 404", "'Qual o significado do 404?'", c, u);
