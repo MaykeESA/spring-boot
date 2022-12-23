@@ -14,6 +14,7 @@ import br.com.alura.forum.repository.CursoRepository;
 import br.com.alura.forum.repository.TopicosRepository;
 import br.com.alura.forum.repository.UsuarioRepository;
 
+@SuppressWarnings("unused")
 @SpringBootApplication
 @EnableCaching
 @EnableSpringDataWebSupport
@@ -43,7 +44,7 @@ public class ForumApplication implements CommandLineRunner{
 		this.cr.save(cursoSeguranca);
 		
 		# Senha BCrypt: 
-			$2a$10$Zlu7OQJW.OVbb4JrUEHawuuG7DdZt09c9AnlUlenSjT3P5dEFiBC2
+			# $2a$10$Zlu7OQJW.OVbb4JrUEHawuuG7DdZt09c9AnlUlenSjT3P5dEFiBC2
 		
 		Usuario user1 = new Usuario("Mayke", "mayke@mail.com", "senha123");
 		Usuario user2 = new Usuario("Gustavo", "gustavo@mail.com", "senha123");

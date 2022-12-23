@@ -55,7 +55,6 @@ public class TopicosController {
 			Page<Topico> topicos = this.tr.findByCursoNome(nomeCurso, paginacao);
 			return TopicoDto.converter(topicos);
 		}
-
 	}
 
 	@GetMapping("/{id}")

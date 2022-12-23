@@ -13,14 +13,18 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @SuppressWarnings("deprecation")
 @EnableWebSecurity
 @Configuration
 public class SecutiryConfig extends WebSecurityConfigurerAdapter{
-
+	
 	@Autowired
 	private UserDetailsService autenticacaoService;
+	
+	@Autowired
+	private AutenticacaoViaTokenFilter authTokenFilter;
 	
 	@Override
 	@Bean
@@ -43,7 +47,8 @@ public class SecutiryConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers(HttpMethod.POST, "/auth").permitAll()
 		.anyRequest().authenticated()
 		.and().csrf().disable()
-		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+		.and().addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 	
 	//Configuracoes de recursos estaticos(Js, CSS, etc...)
