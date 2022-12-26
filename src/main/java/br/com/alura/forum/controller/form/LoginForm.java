@@ -14,6 +14,9 @@ public class LoginForm {
 	@NotNull @NotEmpty @NotBlank @Size(min = 7)
 	private String senha;
 
+	public LoginForm() {
+	}
+	
 	public LoginForm(String email, String senha) {
 		this.email = email;
 		this.senha = senha;

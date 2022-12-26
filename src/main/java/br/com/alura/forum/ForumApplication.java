@@ -24,6 +24,7 @@ public class ForumApplication implements CommandLineRunner {
 	@Autowired
 	private UsuarioRepository ur;
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(ForumApplication.class, args);
 	}

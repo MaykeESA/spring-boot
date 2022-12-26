@@ -17,6 +17,9 @@ public class TopicoForm {
 	private String mensagem;
 	private String nomeCurso;
 
+	public TopicoForm() {
+	}
+	
 	public TopicoForm(String titulo, String mensagem, String nomeCurso) {
 		this.titulo = titulo;
 		this.mensagem = mensagem;
